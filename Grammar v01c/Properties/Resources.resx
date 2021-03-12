@@ -126,6 +126,9 @@
   <data name="NonterminalsColor" xml:space="preserve">
     <value>Color.Red</value>
   </data>
+  <data name="SpacePlaceholder" xml:space="preserve">
+    <value>_</value>
+  </data>
   <data name="TerminalsColor" xml:space="preserve">
     <value>Color.Blue</value>
   </data>

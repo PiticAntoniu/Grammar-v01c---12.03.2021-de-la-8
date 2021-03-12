@@ -88,6 +88,15 @@ namespace Grammar_v01c.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _.
+        /// </summary>
+        internal static string SpacePlaceholder {
+            get {
+                return ResourceManager.GetString("SpacePlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Color.Blue.
         /// </summary>
         internal static string TerminalsColor {

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Grammar_v01c
 {
-    internal class Grammar
+    public class Grammar
     {
         private string originalInput;
 

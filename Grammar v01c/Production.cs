@@ -1,6 +1,6 @@
 ﻿namespace Grammar_v01c
 {
-    internal class Production
+    public class Production
     {
         char left;
         string right;

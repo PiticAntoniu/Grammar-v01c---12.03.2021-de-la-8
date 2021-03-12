@@ -35,5 +35,11 @@ namespace Grammar_v01c
             g.LoadFromFile(Properties.Resources.DefaultGrammarLocation);
             grammarInfoWebBrowser.DocumentText = g.GrammarInfoAsHTML();
         }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            var t = new EditGrammarForm(g);
+            t.ShowDialog();
+        }
     }
 }

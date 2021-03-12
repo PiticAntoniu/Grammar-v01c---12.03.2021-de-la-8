@@ -33,6 +33,7 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.grammarInfoWebBrowser = new System.Windows.Forms.WebBrowser();
+            this.editButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // parseButton
@@ -55,8 +56,8 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(43, 247);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveButton.Location = new System.Drawing.Point(249, 247);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(67, 28);
             this.saveButton.TabIndex = 3;
@@ -66,8 +67,8 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(137, 247);
-            this.loadButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loadButton.Location = new System.Drawing.Point(343, 247);
+            this.loadButton.Margin = new System.Windows.Forms.Padding(2);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(67, 28);
             this.loadButton.TabIndex = 4;
@@ -83,11 +84,22 @@
             this.grammarInfoWebBrowser.Size = new System.Drawing.Size(367, 171);
             this.grammarInfoWebBrowser.TabIndex = 5;
             // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(43, 249);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.TabIndex = 6;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
             // grammarInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 286);
+            this.ClientSize = new System.Drawing.Size(423, 286);
+            this.Controls.Add(this.editButton);
             this.Controls.Add(this.grammarInfoWebBrowser);
             this.Controls.Add(this.loadButton);
             this.Controls.Add(this.saveButton);
@@ -107,6 +119,7 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.WebBrowser grammarInfoWebBrowser;
+        private System.Windows.Forms.Button editButton;
     }
 }
 

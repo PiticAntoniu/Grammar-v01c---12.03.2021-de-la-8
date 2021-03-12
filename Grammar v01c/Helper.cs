@@ -51,18 +51,22 @@ namespace Grammar_v01c
         }
         internal static string FormatAsSet(List<char> input, Color color)
         {
-            // abc => {a,b,c}
             StringBuilder result = new StringBuilder();
             foreach (char c in input)
             {
-                result.Append($"<span style = \"color:{color.Name}\">{c}</ span >");
-                result.Append($"<span style = \"color: black\">,</ span >");
+                result.Append(ColoredChar(c, color));
+                result.Append(ColoredChar(',',Color.Black));
             }
 
             result = result.Remove(result.Length - 10, 10); // sterege ultima virgula si spanu'
             result.Append("}");
 
             return result.ToString();
+        }
+
+        private static string ColoredChar( char c,Color color)
+        {
+            return $"<span style = \"color:{color.Name}\">{c}</ span >";
         }
     }
 }

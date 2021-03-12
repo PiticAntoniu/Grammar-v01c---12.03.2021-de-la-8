@@ -52,13 +52,14 @@ namespace Grammar_v01c
         internal static string FormatAsSet(List<char> input, Color color)
         {
             StringBuilder result = new StringBuilder();
+            result.Append("{");
             foreach (char c in input)
             {
                 result.Append(ColoredChar(c, color));
                 result.Append(ColoredChar(',',Color.Black));
             }
 
-            result = result.Remove(result.Length - 10, 10); // sterege ultima virgula si spanu'
+            result = result.Remove(result.Length - 10, 10); // sterge ultima virgula si spanu'
             result.Append("}");
 
             return result.ToString();

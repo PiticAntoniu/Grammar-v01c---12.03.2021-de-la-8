@@ -65,7 +65,7 @@ set of production rules P = {FormatAsSet(ProductionList)}<br>";
         internal string GrammarInfoAsHTML()
         {
             StringBuilder t = new StringBuilder();
-            t.Append("nonterminals  N={");
+            t.Append("nonterminals  N=");
             t.Append(Helper.FormatAsSet(nonterminals,Color.Blue));
             return t.ToString();
         }

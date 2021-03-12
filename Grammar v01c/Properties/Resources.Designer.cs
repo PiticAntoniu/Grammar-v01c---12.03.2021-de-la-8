@@ -61,11 +61,38 @@ namespace Grammar_v01c.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Color.Black.
+        /// </summary>
+        internal static string DefaultColor {
+            get {
+                return ResourceManager.GetString("DefaultColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to c:\\temp\\defaultGrammar.json.
         /// </summary>
         internal static string DefaultGrammarLocation {
             get {
                 return ResourceManager.GetString("DefaultGrammarLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color.Red.
+        /// </summary>
+        internal static string NonterminalsColor {
+            get {
+                return ResourceManager.GetString("NonterminalsColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Color.Blue.
+        /// </summary>
+        internal static string TerminalsColor {
+            get {
+                return ResourceManager.GetString("TerminalsColor", resourceCulture);
             }
         }
     }

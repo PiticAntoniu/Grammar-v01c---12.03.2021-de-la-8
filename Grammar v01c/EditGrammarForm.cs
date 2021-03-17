@@ -24,5 +24,13 @@ namespace Grammar_v01c
             productionsDataGridView.AutoResizeColumns();
         }
 
+        private void OKButton_Click(object sender, EventArgs e)
+        {
+            g.StartSymbol = startSymbolTextBox.Text[0];
+            g.Nonterminals = Helper.StringToCharList(nonterminalsTextBox.Text);
+            g.Terminals = Helper.StringToCharList(terminalsTextBox.Text);
+            g.SaveToJson(Properties.Resources.DefaultGrammarLocation);
+            Close();
+        }
     }
 }

@@ -43,93 +43,108 @@
             // 
             // startSymbolTextBox
             // 
-            this.startSymbolTextBox.Location = new System.Drawing.Point(94, 15);
+            this.startSymbolTextBox.Location = new System.Drawing.Point(188, 29);
+            this.startSymbolTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.startSymbolTextBox.Name = "startSymbolTextBox";
-            this.startSymbolTextBox.Size = new System.Drawing.Size(100, 20);
+            this.startSymbolTextBox.Size = new System.Drawing.Size(196, 31);
             this.startSymbolTextBox.TabIndex = 0;
             // 
             // terminalsTextBox
             // 
-            this.terminalsTextBox.Location = new System.Drawing.Point(94, 41);
+            this.terminalsTextBox.Location = new System.Drawing.Point(188, 79);
+            this.terminalsTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.terminalsTextBox.Name = "terminalsTextBox";
-            this.terminalsTextBox.Size = new System.Drawing.Size(100, 20);
+            this.terminalsTextBox.Size = new System.Drawing.Size(196, 31);
             this.terminalsTextBox.TabIndex = 1;
             // 
             // nonterminalsTextBox
             // 
-            this.nonterminalsTextBox.Location = new System.Drawing.Point(94, 73);
+            this.nonterminalsTextBox.Location = new System.Drawing.Point(188, 140);
+            this.nonterminalsTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.nonterminalsTextBox.Name = "nonterminalsTextBox";
-            this.nonterminalsTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nonterminalsTextBox.Size = new System.Drawing.Size(196, 31);
             this.nonterminalsTextBox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(24, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.Size = new System.Drawing.Size(155, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Simbol de start";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 44);
+            this.label2.Location = new System.Drawing.Point(70, 85);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(107, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Terminale";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 76);
+            this.label3.Location = new System.Drawing.Point(50, 146);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(127, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Neterminale";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 102);
+            this.label4.Location = new System.Drawing.Point(74, 196);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.Size = new System.Drawing.Size(96, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Productii";
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(40, 248);
+            this.OKButton.Location = new System.Drawing.Point(85, 506);
+            this.OKButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(75, 23);
+            this.OKButton.Size = new System.Drawing.Size(150, 44);
             this.OKButton.TabIndex = 8;
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
+            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(132, 248);
+            this.cancelButton.Location = new System.Drawing.Point(269, 506);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(150, 44);
             this.cancelButton.TabIndex = 9;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // productionsDataGridView
             // 
+            this.productionsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.productionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productionsDataGridView.Location = new System.Drawing.Point(92, 102);
+            this.productionsDataGridView.ColumnHeadersVisible = false;
+            this.productionsDataGridView.Location = new System.Drawing.Point(29, 225);
+            this.productionsDataGridView.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.productionsDataGridView.Name = "productionsDataGridView";
-            this.productionsDataGridView.Size = new System.Drawing.Size(140, 140);
+            this.productionsDataGridView.RowHeadersVisible = false;
+            this.productionsDataGridView.RowHeadersWidth = 82;
+            this.productionsDataGridView.Size = new System.Drawing.Size(440, 269);
             this.productionsDataGridView.TabIndex = 10;
             // 
             // EditGrammarForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(244, 294);
+            this.ClientSize = new System.Drawing.Size(975, 565);
             this.Controls.Add(this.productionsDataGridView);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.OKButton);
@@ -140,6 +155,7 @@
             this.Controls.Add(this.nonterminalsTextBox);
             this.Controls.Add(this.terminalsTextBox);
             this.Controls.Add(this.startSymbolTextBox);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "EditGrammarForm";
             this.Text = "EditGrammarForm";
             ((System.ComponentModel.ISupportInitialize)(this.productionsDataGridView)).EndInit();

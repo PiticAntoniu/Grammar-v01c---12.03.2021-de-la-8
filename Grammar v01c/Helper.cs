@@ -45,6 +45,18 @@ namespace Grammar_v01c
             return result.ToString();
         }
 
+        internal static List<char> StringToCharList(string input)
+        {
+            List<char> result = new List<char>();
+
+            foreach (var c in input)
+            {
+                result.Add(c);
+            }
+
+            return result;
+        }
+
         internal static object FormatAsSet(List<char> input)
         {
             // abc => {a,b,c}

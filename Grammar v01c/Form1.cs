@@ -40,6 +40,8 @@ namespace Grammar_v01c
         {
             var t = new EditGrammarForm(g);
             t.ShowDialog();
+            g.LoadFromFile(Properties.Resources.DefaultGrammarLocation);
+            grammarInfoWebBrowser.DocumentText = g.GrammarInfoAsHTML();
         }
     }
 }

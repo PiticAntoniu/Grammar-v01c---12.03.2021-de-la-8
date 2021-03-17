@@ -66,7 +66,10 @@ set of production rules P = {FormatAsSet(ProductionList)}<br>";
         {
             StringBuilder t = new StringBuilder();
             t.Append("nonterminals  N=");
-            t.Append(Helper.FormatAsSet(nonterminals,Color.Blue));
+            t.Append(Helper.FormatAsSet(nonterminals, Color.Blue));
+            t.Append("<br>terminals  T=");
+            t.Append(Helper.FormatAsSet(terminals, Color.Red));
+
             return t.ToString();
         }
         private string FormatAsSet(List<Production> productionList)

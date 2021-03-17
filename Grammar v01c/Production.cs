@@ -1,4 +1,6 @@
-﻿namespace Grammar_v01c
+﻿using System.Text;
+
+namespace Grammar_v01c
 {
     public class Production
     {
@@ -7,5 +9,7 @@
 
         public char Left { get => left; set => left = value; }
         public string Right { get => right; set => right = value; }
+
+    
     }
 }

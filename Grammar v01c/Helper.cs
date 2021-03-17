@@ -22,6 +22,8 @@ namespace Grammar_v01c
             return result.ToList();
         }
 
+
+
         internal static List<char> LowerLetters(string input)
         {
             HashSet<char> result = new HashSet<char>();
@@ -78,7 +80,7 @@ namespace Grammar_v01c
             foreach (char c in input)
             {
                 result.Append(ColoredChar(c, color));
-                result.Append(ColoredChar(',',Color.Black));
+                result.Append(ColoredChar(',',Color.FromName(Properties.Resources.DefaultColor)));
             }
 
             result = result.Remove(result.Length - 10, 10); // sterge ultima virgula si spanu'
@@ -87,7 +89,12 @@ namespace Grammar_v01c
             return result.ToString();
         }
 
-        private static string ColoredChar( char c,Color color)
+        internal static string ColoredString(string text, string colorName)
+        {
+            return $"<span style = \"color:{colorName}\">{text}</ span >";
+        }
+
+        public static string ColoredChar( char c,Color color)
         {
             return $"<span style = \"color:{color.Name}\">{c}</ span >";
         }

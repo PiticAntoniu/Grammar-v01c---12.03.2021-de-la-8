@@ -28,16 +28,16 @@ namespace Grammar_v01c
         public List<Production> ProductionList { get => productionList; set => productionList = value; }
         public char StartSymbol { get => startSymbol; set => startSymbol = value; }
 
-   
+
         #endregion
 
         #region constructors
         public Grammar()
         {
-            
+
         }
 
-  
+
 
         public Grammar(string originalInput)
         {
@@ -72,18 +72,59 @@ namespace Grammar_v01c
         {
 
             return $@"Let G be a grammar with nonterminal symbols N = {Helper.FormatAsSet(Nonterminals)},<br>
-set of terminal symbols T = {Helper.FormatAsSet(Terminals)}<br>.
-start symbol {StartSymbol} <br>
-set of production rules P = {FormatAsSet(ProductionList)}<br>";
+        set of terminal symbols T = {Helper.FormatAsSet(Terminals)}<br>.
+        start symbol {StartSymbol} <br>
+        set of production rules P = {FormatAsSet(ProductionList)}<br>";
+        }
+
+        public string GetProductionAsHTML(Production p)
+        {
+            StringBuilder t = new StringBuilder();
+
+            t.Append(p.Left);
+            t.Append(Helper.ColoredString(" -> ", Properties.Resources.DefaultColor));
+            t.Append(FormatAsHtml(p.Right));
+
+            return t.ToString();
+        }
+
+        private string FormatAsHtml(string word)
+        {
+            StringBuilder p = new StringBuilder();
+
+            foreach (var c in word)
+            {
+                if (IsTerminal(c))
+                {
+                    p.Append(Helper.ColoredChar(c, Color.FromName(Properties.Resources.TerminalsColor)));
+                }
+                else
+                {
+                    p.Append(Helper.ColoredChar(c, Color.FromName(Properties.Resources.NonterminalsColor)));
+                }
+            }
+
+            return p.ToString();
+        }
+
+        private bool IsTerminal(char c)
+        {
+            return terminals.Contains(c);
         }
 
         internal string GrammarInfoAsHTML()
         {
             StringBuilder t = new StringBuilder();
             t.Append("nonterminals  N=");
-            t.Append(Helper.FormatAsSet(nonterminals, Color.Blue));
+            t.Append(Helper.FormatAsSet(nonterminals, Color.FromName( Properties.Resources.NonterminalsColor)));
             t.Append("<br>terminals  T=");
-            t.Append(Helper.FormatAsSet(terminals, Color.Red));
+            t.Append(Helper.FormatAsSet(terminals, Color.FromName(Properties.Resources.NonterminalsColor)));
+
+            foreach (var p in productionList)
+            {
+                t.Append("<br>");
+                t.Append(GetProductionAsHTML(p));
+            }
 
             return t.ToString();
         }
@@ -131,7 +172,7 @@ set of production rules P = {FormatAsSet(ProductionList)}<br>";
             string json = File.ReadAllText(fileName);
             Grammar tempGrammar = new Grammar();
             tempGrammar = JsonConvert.DeserializeObject<Grammar>(json);
-            
+
             startSymbol = tempGrammar.startSymbol;
             nonterminals = tempGrammar.nonterminals;
             terminals = tempGrammar.terminals;

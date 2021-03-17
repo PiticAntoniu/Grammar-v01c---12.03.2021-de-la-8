@@ -19,6 +19,9 @@ namespace Grammar_v01c
         private object v;
 
         public string OriginalInput { get => originalInput; set => originalInput = value; }
+
+
+
         public List<char> Nonterminals { get => nonterminals; set => nonterminals = value; }
         public List<char> Terminals { get => terminals; set => terminals = value; }
 
@@ -53,6 +56,18 @@ namespace Grammar_v01c
             this.v = v;
         }
         #endregion
+
+        internal void Parse(string originalInput)
+        {
+            OriginalInput = originalInput;
+
+            StartSymbol = OriginalInput[0];
+
+            nonterminals = Helper.UpperLetters(OriginalInput);
+            terminals = Helper.LowerLetters(OriginalInput);
+
+            SetProductions();
+        }
         internal string GrammarInfoAsText()
         {
 

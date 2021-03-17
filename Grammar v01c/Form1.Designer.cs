@@ -38,9 +38,10 @@
             // 
             // parseButton
             // 
-            this.parseButton.Location = new System.Drawing.Point(255, 42);
+            this.parseButton.Location = new System.Drawing.Point(510, 81);
+            this.parseButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.parseButton.Name = "parseButton";
-            this.parseButton.Size = new System.Drawing.Size(75, 23);
+            this.parseButton.Size = new System.Drawing.Size(150, 44);
             this.parseButton.TabIndex = 0;
             this.parseButton.Text = "Parse";
             this.parseButton.UseVisualStyleBackColor = true;
@@ -48,18 +49,19 @@
             // 
             // inputTextBox
             // 
-            this.inputTextBox.Location = new System.Drawing.Point(43, 42);
+            this.inputTextBox.Location = new System.Drawing.Point(86, 81);
+            this.inputTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.inputTextBox.Name = "inputTextBox";
-            this.inputTextBox.Size = new System.Drawing.Size(191, 20);
+            this.inputTextBox.Size = new System.Drawing.Size(378, 31);
             this.inputTextBox.TabIndex = 1;
             this.inputTextBox.Text = "SaA$Sb$Aaa&";
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(249, 247);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
+            this.saveButton.Location = new System.Drawing.Point(498, 475);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(67, 28);
+            this.saveButton.Size = new System.Drawing.Size(134, 54);
             this.saveButton.TabIndex = 3;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -67,10 +69,10 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(343, 247);
-            this.loadButton.Margin = new System.Windows.Forms.Padding(2);
+            this.loadButton.Location = new System.Drawing.Point(686, 475);
+            this.loadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(67, 28);
+            this.loadButton.Size = new System.Drawing.Size(134, 54);
             this.loadButton.TabIndex = 4;
             this.loadButton.Text = "Load";
             this.loadButton.UseVisualStyleBackColor = true;
@@ -78,17 +80,19 @@
             // 
             // grammarInfoWebBrowser
             // 
-            this.grammarInfoWebBrowser.Location = new System.Drawing.Point(43, 71);
-            this.grammarInfoWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.grammarInfoWebBrowser.Location = new System.Drawing.Point(86, 137);
+            this.grammarInfoWebBrowser.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.grammarInfoWebBrowser.MinimumSize = new System.Drawing.Size(40, 38);
             this.grammarInfoWebBrowser.Name = "grammarInfoWebBrowser";
-            this.grammarInfoWebBrowser.Size = new System.Drawing.Size(367, 171);
+            this.grammarInfoWebBrowser.Size = new System.Drawing.Size(734, 329);
             this.grammarInfoWebBrowser.TabIndex = 5;
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(43, 249);
+            this.editButton.Location = new System.Drawing.Point(86, 479);
+            this.editButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.Size = new System.Drawing.Size(150, 44);
             this.editButton.TabIndex = 6;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
@@ -96,17 +100,19 @@
             // 
             // grammarInfoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 286);
+            this.ClientSize = new System.Drawing.Size(846, 550);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.grammarInfoWebBrowser);
             this.Controls.Add(this.loadButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.inputTextBox);
             this.Controls.Add(this.parseButton);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "grammarInfoForm";
             this.Text = "Grammar Info";
+            this.Load += new System.EventHandler(this.grammarInfoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

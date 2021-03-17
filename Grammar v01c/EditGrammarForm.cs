@@ -12,24 +12,21 @@ namespace Grammar_v01c
 {
     public partial class EditGrammarForm : Form
     {
-        Grammar g = new Grammar();
-        public EditGrammarForm(Grammar g)
+        public EditGrammarForm()
         {
-            this.g = g;
             InitializeComponent();
-            startSymbolTextBox.Text = g.StartSymbol.ToString();
-            terminalsTextBox.Text = Helper.CharListToString(g.Terminals);
-            nonterminalsTextBox.Text = Helper.CharListToString(g.Nonterminals);
-            productionsDataGridView.DataSource = g.ProductionList;
-            productionsDataGridView.AutoResizeColumns();
+            startSymbolTextBox.Text = GrammarProvider.GetGrammar().StartSymbol.ToString();
+            terminalsTextBox.Text = Helper.CharListToString(GrammarProvider.GetGrammar().Terminals);
+            nonterminalsTextBox.Text = Helper.CharListToString(GrammarProvider.GetGrammar().Nonterminals);
+            productionsDataGridView.DataSource = GrammarProvider.GetGrammar().ProductionList;
+            productionsDataGridView.AutoResizeColumns();    
         }
 
         private void OKButton_Click(object sender, EventArgs e)
         {
-            g.StartSymbol = startSymbolTextBox.Text[0];
-            g.Nonterminals = Helper.StringToCharList(nonterminalsTextBox.Text);
-            g.Terminals = Helper.StringToCharList(terminalsTextBox.Text);
-            g.SaveToJson(Properties.Resources.DefaultGrammarLocation);
+            GrammarProvider.GetGrammar().StartSymbol = startSymbolTextBox.Text[0];
+            GrammarProvider.GetGrammar().Nonterminals = Helper.StringToCharList(nonterminalsTextBox.Text);
+            GrammarProvider.GetGrammar().Terminals = Helper.StringToCharList(terminalsTextBox.Text);
             Close();
         }
     }

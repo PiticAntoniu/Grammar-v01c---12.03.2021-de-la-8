@@ -12,7 +12,7 @@ namespace Grammar_v01c
 {
     public partial class grammarInfoForm : Form
     {
-        Grammar g = new Grammar();
+
         public grammarInfoForm()
         {
             InitializeComponent();
@@ -20,28 +20,34 @@ namespace Grammar_v01c
 
         private void parseButton_Click(object sender, EventArgs e)
         {
-            g = new Grammar(inputTextBox.Text);
+            GrammarProvider.GetGrammar().Parse(inputTextBox.Text);
 
-            grammarInfoWebBrowser.DocumentText = g.GrammarInfoAsText();
+            grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsText();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            g.SaveToJson(Properties.Resources.DefaultGrammarLocation);
+            GrammarProvider.GetGrammar().SaveToJson(Properties.Resources.DefaultGrammarLocation);
         }
 
         private void loadButton_Click(object sender, EventArgs e)
         {
-            g.LoadFromFile(Properties.Resources.DefaultGrammarLocation);
-            grammarInfoWebBrowser.DocumentText = g.GrammarInfoAsHTML();
+            GrammarProvider.GetGrammar().LoadFromFile(Properties.Resources.DefaultGrammarLocation);
+            grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            var t = new EditGrammarForm(g);
+            var t = new EditGrammarForm();
             t.ShowDialog();
-            g.LoadFromFile(Properties.Resources.DefaultGrammarLocation);
-            grammarInfoWebBrowser.DocumentText = g.GrammarInfoAsHTML();
+            grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
+        }
+
+        private void grammarInfoForm_Load(object sender, EventArgs e)
+        {
+            GrammarProvider.GetGrammar().LoadFromFile(Properties.Resources.DefaultGrammarLocation);
+            grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
+
         }
     }
 }

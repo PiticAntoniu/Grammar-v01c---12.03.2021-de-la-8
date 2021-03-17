@@ -45,9 +45,16 @@ namespace Grammar_v01c
 
         private void grammarInfoForm_Load(object sender, EventArgs e)
         {
-            GrammarProvider.GetGrammar().LoadFromFile(Properties.Resources.DefaultGrammarLocation);
-            grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
-
+            try
+            {
+                GrammarProvider.GetGrammar().LoadFromFile(Properties.Resources.DefaultGrammarLocation);
+                grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
+            }
+            catch (Exception)
+            {
+                GrammarProvider.GetGrammar().Parse(inputTextBox.Text);
+                grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsText();
+            }
         }
 
         private void noLambdaProductionsButton_Click(object sender, EventArgs e)

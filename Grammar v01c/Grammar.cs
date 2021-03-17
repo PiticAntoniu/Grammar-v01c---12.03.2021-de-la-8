@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace Grammar_v01c
@@ -77,12 +78,52 @@ namespace Grammar_v01c
         set of production rules P = {FormatAsSet(ProductionList)}<br>";
         }
 
+        internal void EliminateLambdaProductions()
+        {
+            // determin neterminalele care pot duce in lambda NE
+            int i = 0;
+            List<char> [] N = new List<char>[100];
+            N[i] = new List<char>();
+
+            foreach (var p in productionList)
+            {
+                if (p.Right.Equals("@"))
+                {
+                    N[i].Add(p.Left);
+                }
+            }
+
+            do
+            {
+                i++;
+                N[i] = new List<char>(N[i-1]);
+                foreach (var p in productionList)
+                {
+                    if (Helper.StringHasOnlyCharsFromCharList(p.Right,N[i-1]))
+                    {
+                        N[i].Add(p.Left);
+                    }
+                    N[i] = N[i].Distinct().ToList();
+                }  
+            } 
+            while (! N[i].SequenceEqual(N[i-1]));
+
+            int c=12;
+
+            //!Egale(N[i], N[i - 1])
+            // schimb simbolul de start  daca e cazul
+
+            // pentru fiecare productie p care contine simboluri din NE
+            // expandam p in toate variantele in care se inlocuiesc 
+            // neterminalele din NE cu lambda sau ele insele
+        }
+
         public string GetProductionAsHTML(Production p)
         {
             StringBuilder t = new StringBuilder();
 
             t.Append(p.Left);
-            t.Append(Helper.ColoredString(" -> ", Properties.Resources.DefaultColor));
+            t.Append(Helper.ColoredString(" → ", Properties.Resources.DefaultColor));
             t.Append(FormatAsHtml(p.Right));
 
             return t.ToString();

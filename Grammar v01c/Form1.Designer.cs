@@ -34,6 +34,7 @@
             this.loadButton = new System.Windows.Forms.Button();
             this.grammarInfoWebBrowser = new System.Windows.Forms.WebBrowser();
             this.editButton = new System.Windows.Forms.Button();
+            this.noLambdaProductionsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // parseButton
@@ -98,11 +99,22 @@
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
+            // noLambdaProductionsButton
+            // 
+            this.noLambdaProductionsButton.Location = new System.Drawing.Point(276, 479);
+            this.noLambdaProductionsButton.Name = "noLambdaProductionsButton";
+            this.noLambdaProductionsButton.Size = new System.Drawing.Size(153, 50);
+            this.noLambdaProductionsButton.TabIndex = 7;
+            this.noLambdaProductionsButton.Text = "no @ prod";
+            this.noLambdaProductionsButton.UseVisualStyleBackColor = true;
+            this.noLambdaProductionsButton.Click += new System.EventHandler(this.noLambdaProductionsButton_Click);
+            // 
             // grammarInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 550);
+            this.Controls.Add(this.noLambdaProductionsButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.grammarInfoWebBrowser);
             this.Controls.Add(this.loadButton);
@@ -126,6 +138,7 @@
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.WebBrowser grammarInfoWebBrowser;
         private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button noLambdaProductionsButton;
     }
 }
 

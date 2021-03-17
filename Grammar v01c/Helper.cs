@@ -98,5 +98,17 @@ namespace Grammar_v01c
         {
             return $"<span style = \"color:{color.Name}\">{c}</ span >";
         }
+
+        internal static bool StringHasOnlyCharsFromCharList(string text, List<char> charList)
+        {
+            foreach (var c in text)
+            {
+                if (!charList.Contains(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

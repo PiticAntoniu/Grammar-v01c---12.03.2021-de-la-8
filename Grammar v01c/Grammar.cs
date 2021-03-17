@@ -122,7 +122,7 @@ namespace Grammar_v01c
         {
             StringBuilder t = new StringBuilder();
 
-            t.Append(p.Left);
+            t.Append(Helper.ColoredChar(p.Left,Color.FromName(Properties.Resources.NonterminalsColor)));
             t.Append(Helper.ColoredString(" → ", Properties.Resources.DefaultColor));
             t.Append(FormatAsHtml(p.Right));
 
@@ -159,7 +159,7 @@ namespace Grammar_v01c
             t.Append("nonterminals  N=");
             t.Append(Helper.FormatAsSet(nonterminals, Color.FromName( Properties.Resources.NonterminalsColor)));
             t.Append("<br>terminals  T=");
-            t.Append(Helper.FormatAsSet(terminals, Color.FromName(Properties.Resources.NonterminalsColor)));
+            t.Append(Helper.FormatAsSet(terminals, Color.FromName(Properties.Resources.TerminalsColor)));
 
             foreach (var p in productionList)
             {
@@ -188,6 +188,8 @@ namespace Grammar_v01c
         {
             // "SaA$Sb$Aaa&" => S->aA  S->b  A->aa
             // OriginalInput => ProductionList
+
+            ProductionList.Clear();
 
             foreach (var production in OriginalInput.Split('$', '&'))
             {

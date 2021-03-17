@@ -61,7 +61,7 @@ namespace Grammar_v01c.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Color.Black.
+        ///   Looks up a localized string similar to Black.
         /// </summary>
         internal static string DefaultColor {
             get {
@@ -79,7 +79,7 @@ namespace Grammar_v01c.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Color.Red.
+        ///   Looks up a localized string similar to Red.
         /// </summary>
         internal static string NonterminalsColor {
             get {
@@ -97,7 +97,7 @@ namespace Grammar_v01c.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Color.Blue.
+        ///   Looks up a localized string similar to Blue.
         /// </summary>
         internal static string TerminalsColor {
             get {

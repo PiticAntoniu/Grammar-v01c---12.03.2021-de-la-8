@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultColor" xml:space="preserve">
-    <value>Color.Black</value>
+    <value>Black</value>
   </data>
   <data name="DefaultGrammarLocation" xml:space="preserve">
     <value>c:\\temp\\defaultGrammar.json</value>
   </data>
   <data name="NonterminalsColor" xml:space="preserve">
-    <value>Color.Red</value>
+    <value>Red</value>
   </data>
   <data name="SpacePlaceholder" xml:space="preserve">
     <value>_</value>
   </data>
   <data name="TerminalsColor" xml:space="preserve">
-    <value>Color.Blue</value>
+    <value>Blue</value>
   </data>
 </root>

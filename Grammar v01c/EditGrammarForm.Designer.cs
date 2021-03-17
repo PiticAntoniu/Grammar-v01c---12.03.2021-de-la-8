@@ -60,6 +60,7 @@
             this.terminalsTextBox.Size = new System.Drawing.Size(196, 31);
             this.terminalsTextBox.TabIndex = 1;
             this.terminalsTextBox.TextChanged += new System.EventHandler(this.terminalsTextBox_TextChanged);
+            this.terminalsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.terminalsTextBox_KeyPress);
             this.terminalsTextBox.Leave += new System.EventHandler(this.terminalsTextBox_Leave);
             // 
             // nonterminalsTextBox

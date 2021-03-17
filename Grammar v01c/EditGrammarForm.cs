@@ -117,5 +117,13 @@ namespace Grammar_v01c
                 }
             }
         }
+
+        private void terminalsTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!GrammarProvider.GetGrammar().IsValidTerminal(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

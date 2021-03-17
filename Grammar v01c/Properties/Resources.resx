@@ -124,13 +124,13 @@
     <value>c:\\temp\\defaultGrammar.json</value>
   </data>
   <data name="NonterminalsColor" xml:space="preserve">
-    <value>Red</value>
+    <value>Magenta</value>
   </data>
   <data name="SpacePlaceholder" xml:space="preserve">
     <value>_</value>
   </data>
   <data name="TerminalChars" xml:space="preserve">
-    <value>+-*/()</value>
+    <value>+-*/()@</value>
   </data>
   <data name="TerminalsColor" xml:space="preserve">
     <value>Blue</value>

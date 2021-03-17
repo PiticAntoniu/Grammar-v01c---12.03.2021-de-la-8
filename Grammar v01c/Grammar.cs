@@ -118,6 +118,19 @@ namespace Grammar_v01c
             // neterminalele din NE cu lambda sau ele insele
         }
 
+        internal bool IsValidNonterminal(char symbol)
+        {
+            return char.IsUpper(symbol);
+        }
+        internal bool IsValidTerminal(char symbol)
+        {
+            return char.IsLower(symbol) || Properties.Resources.TerminalChars.Contains(symbol);
+        }
+        internal bool IsValidStartSymbol(char symbol)
+        {
+            return nonterminals.Contains(symbol) ;
+        }
+
         internal bool IsValidProduction(Production p)
         {
             if (!GrammarProvider.GetGrammar().nonterminals.Contains(p.Left))

@@ -44,7 +44,7 @@ namespace Grammar_v01c
             productionsDataGridView.DataSource = GrammarProvider.GetGrammar().ProductionList;
         }
 
- 
+
 
         private void productionsDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -56,6 +56,66 @@ namespace Grammar_v01c
                 MessageBox.Show("!");
             }
 
+        }
+
+        private void startSymbolTextBox_Leave(object sender, EventArgs e)
+        {
+            char startSymbol = startSymbolTextBox.Text[0];
+            if (startSymbolTextBox.Text.Length > 1)
+            {
+                MessageBox.Show("!");
+            }
+            if (GrammarProvider.GetGrammar().IsValidStartSymbol(startSymbol))
+            {
+                GrammarProvider.GetGrammar().StartSymbol = startSymbol;
+            }
+            else
+            {
+                MessageBox.Show("!");
+            }
+        }
+
+        private void terminalsTextBox_Leave(object sender, EventArgs e)
+        {
+            string newTerminals = terminalsTextBox.Text;
+
+            GrammarProvider.GetGrammar().Terminals.Clear();
+
+            foreach (var terminal in newTerminals)
+            {
+                if (GrammarProvider.GetGrammar().IsValidTerminal(terminal))
+                {
+                    GrammarProvider.GetGrammar().Terminals.Add(terminal);
+                }
+                else
+                {
+                    MessageBox.Show("!");
+                }
+            }
+        }
+
+        private void terminalsTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nonterminalsTextBox_Leave(object sender, EventArgs e)
+        {
+            string newNonterminals = nonterminalsTextBox.Text;
+
+            GrammarProvider.GetGrammar().Terminals.Clear();
+
+            foreach (var nonterminal in newNonterminals)
+            {
+                if (GrammarProvider.GetGrammar().IsValidNonterminal(nonterminal))
+                {
+                    GrammarProvider.GetGrammar().Nonterminals.Add(nonterminal);
+                }
+                else
+                {
+                    MessageBox.Show("!");
+                }
+            }
         }
     }
 }

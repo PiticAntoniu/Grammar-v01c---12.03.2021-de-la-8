@@ -50,6 +50,7 @@
             this.startSymbolTextBox.Name = "startSymbolTextBox";
             this.startSymbolTextBox.Size = new System.Drawing.Size(196, 31);
             this.startSymbolTextBox.TabIndex = 0;
+            this.startSymbolTextBox.Leave += new System.EventHandler(this.startSymbolTextBox_Leave);
             // 
             // terminalsTextBox
             // 
@@ -58,6 +59,8 @@
             this.terminalsTextBox.Name = "terminalsTextBox";
             this.terminalsTextBox.Size = new System.Drawing.Size(196, 31);
             this.terminalsTextBox.TabIndex = 1;
+            this.terminalsTextBox.TextChanged += new System.EventHandler(this.terminalsTextBox_TextChanged);
+            this.terminalsTextBox.Leave += new System.EventHandler(this.terminalsTextBox_Leave);
             // 
             // nonterminalsTextBox
             // 
@@ -66,6 +69,7 @@
             this.nonterminalsTextBox.Name = "nonterminalsTextBox";
             this.nonterminalsTextBox.Size = new System.Drawing.Size(196, 31);
             this.nonterminalsTextBox.TabIndex = 2;
+            this.nonterminalsTextBox.Leave += new System.EventHandler(this.nonterminalsTextBox_Leave);
             // 
             // label1
             // 

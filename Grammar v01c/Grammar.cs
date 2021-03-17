@@ -17,7 +17,7 @@ namespace Grammar_v01c
         List<char> nonterminals = new List<char>();
         List<char> terminals = new List<char>();
         List<Production> productionList = new List<Production>();
-        private object v;
+    
 
         public string OriginalInput { get => originalInput; set => originalInput = value; }
 
@@ -52,10 +52,6 @@ namespace Grammar_v01c
             SetProductions();
         }
 
-        public Grammar(Grammar v)
-        {
-            this.v = v;
-        }
         #endregion
 
         internal void Parse(string originalInput)
@@ -81,11 +77,26 @@ namespace Grammar_v01c
         internal void EliminateLambdaProductions()
         {
             // determin neterminalele care pot duce in lambda NE
+            List<char> Ne = new List<char>();
+            Ne = ListaDeNeterminaleCareDucInLambda();
+
+
+
+            // schimb simbolul de start  daca e cazul
+
+            // pentru fiecare productie p care contine simboluri din NE
+            // expandam p in toate variantele in care se inlocuiesc 
+            // neterminalele din NE cu lambda sau ele insele
+        }
+
+        private static List <char> ListaDeNeterminaleCareDucInLambda()
+        {
             int i = 0;
-            List<char> [] N = new List<char>[100];
+
+            List<char>[] N = new List<char>[100];
             N[i] = new List<char>();
 
-            foreach (var p in productionList)
+            foreach (var p in GrammarProvider.GetGrammar().productionList)
             {
                 if (p.Right.Equals("@"))
                 {
@@ -96,26 +107,19 @@ namespace Grammar_v01c
             do
             {
                 i++;
-                N[i] = new List<char>(N[i-1]);
-                foreach (var p in productionList)
+                N[i] = new List<char>(N[i - 1]);
+                foreach (var p in GrammarProvider.GetGrammar().productionList)
                 {
-                    if (Helper.StringHasOnlyCharsFromCharList(p.Right,N[i-1]))
+                    if (Helper.StringHasOnlyCharsFromCharList(p.Right, N[i - 1]))
                     {
                         N[i].Add(p.Left);
                     }
-                    N[i] = N[i].Distinct().ToList();
-                }  
-            } 
-            while (! N[i].SequenceEqual(N[i-1]));
+                }
+                N[i] = N[i].Distinct().ToList();
+            }
+            while (!N[i].SequenceEqual(N[i - 1]));
 
-            int c=12;
-
-            //!Egale(N[i], N[i - 1])
-            // schimb simbolul de start  daca e cazul
-
-            // pentru fiecare productie p care contine simboluri din NE
-            // expandam p in toate variantele in care se inlocuiesc 
-            // neterminalele din NE cu lambda sau ele insele
+            return N[i];
         }
 
         internal bool IsValidNonterminal(char symbol)

@@ -97,6 +97,15 @@ namespace Grammar_v01c.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to +-*/().
+        /// </summary>
+        internal static string TerminalChars {
+            get {
+                return ResourceManager.GetString("TerminalChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blue.
         /// </summary>
         internal static string TerminalsColor {

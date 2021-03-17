@@ -12,7 +12,6 @@ namespace Grammar_v01c
 {
     public partial class grammarInfoForm : Form
     {
-
         public grammarInfoForm()
         {
             InitializeComponent();
@@ -63,5 +62,7 @@ namespace Grammar_v01c
             grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
 
         }
+
+     
     }
 }

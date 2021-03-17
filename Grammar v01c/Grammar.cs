@@ -118,6 +118,24 @@ namespace Grammar_v01c
             // neterminalele din NE cu lambda sau ele insele
         }
 
+        internal bool IsValidProduction(Production p)
+        {
+            if (!GrammarProvider.GetGrammar().nonterminals.Contains(p.Left))
+            {
+                return false;
+            }
+
+            foreach (var c in p.Right)
+            {
+                if (!GrammarProvider.GetGrammar().nonterminals.Contains(c) &&
+                    !GrammarProvider.GetGrammar().terminals.Contains(c)){
+                    return false;
+                }
+            }
+
+            return true;        
+        }
+
         public string GetProductionAsHTML(Production p)
         {
             StringBuilder t = new StringBuilder();

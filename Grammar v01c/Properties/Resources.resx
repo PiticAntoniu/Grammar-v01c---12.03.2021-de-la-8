@@ -129,6 +129,9 @@
   <data name="SpacePlaceholder" xml:space="preserve">
     <value>_</value>
   </data>
+  <data name="TerminalChars" xml:space="preserve">
+    <value>+-*/()</value>
+  </data>
   <data name="TerminalsColor" xml:space="preserve">
     <value>Blue</value>
   </data>

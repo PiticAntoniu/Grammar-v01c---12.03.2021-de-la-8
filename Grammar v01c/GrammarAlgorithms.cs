@@ -8,7 +8,6 @@ namespace Grammar_v01c
 {
     class GrammarAlgorithms
     {
-        //      Grammar g = new Grammar();
         internal static Grammar EliminateLambdaProductions(Grammar originalGrammar)
         {
             Grammar lambdaFreeGrammar = new Grammar();
@@ -22,8 +21,42 @@ namespace Grammar_v01c
                 lambdaFreeGrammar.ProductionList.AddRange(ExpandProduction(p, Ne));
             }
 
-    
+            ClearUpProductions(lambdaFreeGrammar);
+
             return lambdaFreeGrammar;
+        }
+
+        private static void ClearUpProductions(Grammar lambdaFreeGrammar)
+        {
+            lambdaFreeGrammar.ProductionList.RemoveAll(p => (
+                                    (p.Right.Equals(Properties.Resources.Lambda) &&
+                                    (p.Left != lambdaFreeGrammar.StartSymbol))));
+
+            Grammar g = new Grammar();
+
+            List<Production> prod = new List<Production>();
+
+            foreach (var p in lambdaFreeGrammar.ProductionList)
+            {
+                if (!Exists(prod,p))
+                {
+                    prod.Add(p);
+                }
+            }
+
+            lambdaFreeGrammar.ProductionList = prod;
+        }
+
+        private static bool Exists(List<Production> productionList, Production production)
+        {
+            foreach (var p in productionList)
+            {
+                if (p.Left == production.Left && p.Right.Equals(production.Right))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private static List<Production> ExpandProduction(Production p, List<char> Ne)

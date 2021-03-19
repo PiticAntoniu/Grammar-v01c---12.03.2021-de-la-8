@@ -60,9 +60,18 @@ namespace Grammar_v01c
         {
             Grammar g = GrammarAlgorithms.EliminateLambdaProductions(GrammarProvider.GetGrammar());
             grammarInfoWebBrowser.DocumentText = g.GrammarInfoAsHTML();
-
+            if (grammarSaveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                g.SaveToJson(grammarSaveFileDialog.FileName);
+            }
         }
 
-     
+        private void saveAsButton_Click(object sender, EventArgs e)
+        {
+            if (grammarSaveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                GrammarProvider.GetGrammar().SaveToJson(grammarSaveFileDialog.FileName);
+            }
+        }
     }
 }

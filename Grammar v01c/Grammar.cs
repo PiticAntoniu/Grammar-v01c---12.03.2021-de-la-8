@@ -144,7 +144,9 @@ namespace Grammar_v01c
         internal string GrammarInfoAsHTML()
         {
             StringBuilder t = new StringBuilder();
-            t.Append("nonterminals  N=");
+            t.Append("Start symbol S=");
+            t.Append(FormatAsHtml(StartSymbol.ToString()));
+            t.Append(Helper.ColoredString("<br>nonterminals  N=",Properties.Resources.DefaultColor));
             t.Append(Helper.FormatAsSet(nonterminals, Color.FromName( Properties.Resources.NonterminalsColor)));
             t.Append("<br>terminals  T=");
             t.Append(Helper.FormatAsSet(terminals, Color.FromName(Properties.Resources.TerminalsColor)));

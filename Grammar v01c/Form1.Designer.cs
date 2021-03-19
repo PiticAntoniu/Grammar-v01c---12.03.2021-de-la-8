@@ -35,6 +35,8 @@
             this.grammarInfoWebBrowser = new System.Windows.Forms.WebBrowser();
             this.editButton = new System.Windows.Forms.Button();
             this.noLambdaProductionsButton = new System.Windows.Forms.Button();
+            this.saveAsButton = new System.Windows.Forms.Button();
+            this.grammarSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // parseButton
@@ -59,7 +61,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(498, 475);
+            this.saveButton.Location = new System.Drawing.Point(553, 477);
             this.saveButton.Margin = new System.Windows.Forms.Padding(4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(134, 54);
@@ -70,7 +72,7 @@
             // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(686, 475);
+            this.loadButton.Location = new System.Drawing.Point(741, 477);
             this.loadButton.Margin = new System.Windows.Forms.Padding(4);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(134, 54);
@@ -90,7 +92,7 @@
             // 
             // editButton
             // 
-            this.editButton.Location = new System.Drawing.Point(86, 479);
+            this.editButton.Location = new System.Drawing.Point(31, 482);
             this.editButton.Margin = new System.Windows.Forms.Padding(6);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(150, 44);
@@ -101,7 +103,7 @@
             // 
             // noLambdaProductionsButton
             // 
-            this.noLambdaProductionsButton.Location = new System.Drawing.Point(276, 479);
+            this.noLambdaProductionsButton.Location = new System.Drawing.Point(221, 482);
             this.noLambdaProductionsButton.Name = "noLambdaProductionsButton";
             this.noLambdaProductionsButton.Size = new System.Drawing.Size(153, 50);
             this.noLambdaProductionsButton.TabIndex = 7;
@@ -109,11 +111,27 @@
             this.noLambdaProductionsButton.UseVisualStyleBackColor = true;
             this.noLambdaProductionsButton.Click += new System.EventHandler(this.noLambdaProductionsButton_Click);
             // 
+            // saveAsButton
+            // 
+            this.saveAsButton.Location = new System.Drawing.Point(389, 482);
+            this.saveAsButton.Name = "saveAsButton";
+            this.saveAsButton.Size = new System.Drawing.Size(142, 44);
+            this.saveAsButton.TabIndex = 8;
+            this.saveAsButton.Text = "Save as...";
+            this.saveAsButton.UseVisualStyleBackColor = true;
+            this.saveAsButton.Click += new System.EventHandler(this.saveAsButton_Click);
+            // 
+            // grammarSaveFileDialog
+            // 
+            this.grammarSaveFileDialog.DefaultExt = "json";
+            this.grammarSaveFileDialog.Filter = "\"Data Files (*.json)|*.json\"";
+            // 
             // grammarInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(897, 550);
+            this.Controls.Add(this.saveAsButton);
             this.Controls.Add(this.noLambdaProductionsButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.grammarInfoWebBrowser);
@@ -139,6 +157,8 @@
         private System.Windows.Forms.WebBrowser grammarInfoWebBrowser;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button noLambdaProductionsButton;
+        private System.Windows.Forms.Button saveAsButton;
+        private System.Windows.Forms.SaveFileDialog grammarSaveFileDialog;
     }
 }
 

@@ -122,27 +122,34 @@ namespace Grammar_v01c
             int i = 0;
 
             List<char>[] N = new List<char>[100];
-            N[i] = new List<char>();
+            N[i] = new List<char>(g.ProductionList.Where(x => x.Right.Equals("@"))
+                            .Select(x => x.Left).ToList());
 
-            foreach (var p in g.ProductionList)
-            {
-                if (p.Right.Equals("@"))
-                {
-                    N[i].Add(p.Left);
-                }
-            }
+            //foreach (var p in g.ProductionList)
+            //{
+            //    if (p.Right.Equals("@"))
+            //    {
+            //        N[i].Add(p.Left);
+            //    }
+            //}
+
 
             do
             {
                 i++;
                 N[i] = new List<char>(N[i - 1]);
-                foreach (var p in GrammarProvider.GetGrammar().ProductionList)
-                {
-                    if (Helper.StringHasOnlyCharsFromCharList(p.Right, N[i - 1]))
-                    {
-                        N[i].Add(p.Left);
-                    }
-                }
+                //foreach (var p in GrammarProvider.GetGrammar().ProductionList)
+                //{
+                //    if (Helper.StringHasOnlyCharsFromCharList(p.Right, N[i - 1]))
+                //    {
+                //        N[i].Add(p.Left);
+                //    }
+                //}
+                //N[i] = N[i].Distinct().ToList();
+
+                N[i].AddRange(GrammarProvider.GetGrammar().ProductionList
+                                .Where(x => Helper.StringHasOnlyCharsFromCharList(x.Right, N[i - 1]))
+                                .Select(x => x.Left));
                 N[i] = N[i].Distinct().ToList();
             }
             while (!N[i].SequenceEqual(N[i - 1]));

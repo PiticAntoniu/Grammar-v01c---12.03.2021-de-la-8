@@ -79,6 +79,24 @@ namespace Grammar_v01c.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @.
+        /// </summary>
+        internal static string Lambda {
+            get {
+                return ResourceManager.GetString("Lambda", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Q.
+        /// </summary>
+        internal static string NewStartSymbol {
+            get {
+                return ResourceManager.GetString("NewStartSymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Magenta.
         /// </summary>
         internal static string NonterminalsColor {

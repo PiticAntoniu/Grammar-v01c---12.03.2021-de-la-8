@@ -123,6 +123,12 @@
   <data name="DefaultGrammarLocation" xml:space="preserve">
     <value>c:\\temp\\defaultGrammar.json</value>
   </data>
+  <data name="Lambda" xml:space="preserve">
+    <value>@</value>
+  </data>
+  <data name="NewStartSymbol" xml:space="preserve">
+    <value>Q</value>
+  </data>
   <data name="NonterminalsColor" xml:space="preserve">
     <value>Magenta</value>
   </data>

@@ -58,8 +58,8 @@ namespace Grammar_v01c
 
         private void noLambdaProductionsButton_Click(object sender, EventArgs e)
         {
-            GrammarProvider.GetGrammar().EliminateLambdaProductions();
-            grammarInfoWebBrowser.DocumentText = GrammarProvider.GetGrammar().GrammarInfoAsHTML();
+            Grammar g = GrammarAlgorithms.EliminateLambdaProductions(GrammarProvider.GetGrammar());
+            grammarInfoWebBrowser.DocumentText = g.GrammarInfoAsHTML();
 
         }
 
